@@ -1,4 +1,6 @@
 package hw5;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Building {
 	/* define class variables 
@@ -16,11 +18,14 @@ public class Building {
 	private int lot;
 	private int building_id; //building identification number
 	
-	/* define methods for class */
+	private static final Logger LOGGER = LogManager.getLogger(Building.class.getName());
 	
+	/* define methods for class */
 	public Building(int new_hn, String new_street) {
+		System.setProperty("log4j.configurationFile", "log4j2.xml");
 		house_number = new_hn;
 		street = new_street;
+		LOGGER.info("New object created!");
 	}
 	
 	public int getHouseNumber() {
@@ -119,6 +124,7 @@ public class Building {
 		int newcd_num1 = 33;
 		int newelect1 = 9022;
 		int newgas1 = 339393;
+		LOGGER.warn("The values are been hard coded");
 		
 		//create instances of all class objects w above variables
 		// test comment for Git Push
@@ -134,6 +140,8 @@ public class Building {
 		building.state = "NY";
 		building.building_id = 29;
 		buildingapplication.permit_type = "alteration";
+		if(buildingapplication.permit_type == "alteration")
+			LOGGER.error("The permit type is alteration");
 		//display some stuff from all used instance of all objects to show full OO principles at work
 		building.printBuildingInfo();
 		System.out.println("The permit number is " + buildingapplication.permit_number);
