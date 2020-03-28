@@ -106,7 +106,6 @@ public class Building {
 		System.out.println("The building name is " + name+" and the architecture type is "+arch_style);
 		System.out.println("Building Id is " + building_id);
 		System.out.println("Address is " + house_number +" "+street+", "+city+", "+state);
-		System.out.println("Here is the building information");
 		
 	}
 	
@@ -144,6 +143,7 @@ public class Building {
 			LOGGER.error("The permit type is alteration");
 		//display some stuff from all used instance of all objects to show full OO principles at work
 		building.printBuildingInfo();
+		System.out.println("Here are the construction applications and information for this building:");
 		System.out.println("The permit number is " + buildingapplication.permit_number);
 		System.out.println("The permit type is " + buildingapplication.permit_type);
 		System.out.println("The complaint number is " + complaintsummonsviolations.complaint_number);
