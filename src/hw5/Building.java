@@ -76,6 +76,16 @@ public class Building {
 		return local_govt;
 	}
 	
+	public boolean search(int[] a, int b) {
+		int i;
+		
+		for(i = 0; i < a.length; i++) {
+			if(a[i] == b)
+				return true;
+		}
+		return false;
+	}
+	
 	public void setBlock(int block) {
 		
 	}
